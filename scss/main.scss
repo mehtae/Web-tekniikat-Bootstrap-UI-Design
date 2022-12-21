@@ -1,0 +1,341 @@
+$main-text: #3d3d3d;
+$main-brown: #c4a99080;
+$main-off-white: #fffdfa;
+$main-gray: #808080;
+$hover: #bd824b;
+$accent: #a990c4;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box !important;
+  font-size: 62.5% !important;
+  scroll-behavior: smooth !important;
+}
+
+body {
+  font-family: "Dosis", sans-serif !important;
+  font-size: 1.8rem !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  color: $main-text !important;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none !important;
+  color: $main-text !important;
+}
+
+h1 {
+  font-size: 5rem !important;
+  font-weight: 200;
+}
+
+h1,
+h2 {
+  font-family: "Dosis", sans-serif;
+  font-weight: 500 !important;
+  text-align: center;
+}
+
+p ~ p {
+  color: $accent;
+}
+
+img {
+  display: block;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: $main-brown;
+  border-bottom: 1px solid $accent;
+  z-index: 10;
+  padding: 0.5em;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+
+  .nav-list {
+    display: flex;
+    padding-top: 10px;
+    margin-right: 2rem;
+  }
+
+  .nav-a {
+    text-decoration: none;
+    color: $main-text;
+    margin: 10px;
+  }
+
+  .nav-list .nav-a:hover {
+    transition: ease-in-out 0.5s;
+    border-radius: 5px;
+    padding: 5px;
+  }
+}
+
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: $main-off-white;
+}
+
+.welcome-section > .welcome-section-visual-container {
+  position: absolute;
+  width: 48vw;
+  height: 48vh;
+  border: 2px solid $accent;
+  border-radius: 5px;
+
+  .visual-container-nav {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    top: 0;
+    border-bottom: 2px solid $accent;
+  }
+
+  span[class="dot"] {
+    position: relative;
+    height: 15px;
+    width: 15px;
+    max-width: 20px;
+    max-height: 20px;
+    border: 2px solid $accent;
+    border-radius: 50%;
+  }
+
+  .dot-container {
+    position: relative;
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.welcome-section-visual-container > p {
+  font-size: 2.5rem;
+  font-weight: 50;
+  font-style: italic;
+  color: $accent;
+}
+
+.projects-section {
+  text-align: center;
+  padding: 10rem 2rem;
+  background: $main-off-white;
+
+  .projects-section-header {
+    max-width: 640px;
+    margin: 0 auto 6rem auto;
+    border-bottom: 0.2rem solid $main-brown;
+    font-size: 2.5rem;
+    padding: 10px;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 5rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+  }
+
+  .project {
+    background: $main-off-white;
+    border: 2px solid $main-brown;
+    border-radius: 6px;
+  }
+
+  .project-image {
+    height: calc(100% - 6.8rem);
+    width: 100%;
+    object-fit: cover;
+  }
+  .project-tile {
+    opacity: 70%;
+  }
+
+  .project-tile:hover {
+    opacity: 100%;
+    transition: ease-in 0.1s;
+  }
+  .project-title {
+    font-size: 2rem;
+    padding: 2rem 0.5rem;
+    color: $main-text;
+    text-decoration: none;
+  }
+
+  .project-title:hover {
+    color: $hover;
+    transition: ease-in-out 0.2s;
+  }
+}
+
+.button-show-all {
+  font-size: 2rem;
+  background: $main-off-white;
+  border: 1px solid $main-brown;
+}
+
+.button-show-all:hover {
+  transform: scale(1.1);
+  background: $main-brown;
+  transition: ease-in-out 0.3s;
+}
+
+.button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 2px;
+}
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  padding: 0 2rem;
+  background: $main-off-white;
+
+  .contact-section-header > h2 {
+    font-size: 6rem;
+  }
+
+  .contact-section-header > h2 + p {
+    font-style: italic;
+    letter-spacing: 2px;
+    padding-top: 2px;
+    color: $main-text;
+  }
+  .contact-details {
+    font-size: 2.5rem;
+    color: #a990c480 !important;
+  }
+}
+.contact-links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 980px;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+}
+
+.contact-links a:hover {
+  transform: scale(1.3);
+  transition: ease-out 0.3s;
+}
+
+#bootstrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: $main-off-white;
+}
+
+.bootstrap-container {
+  width: 50%;
+  height: 80vw;
+  background-color: $main-off-white;
+  border: 2px solid $main-brown;
+  margin: 5rem;
+  .bootstrap-container-welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    height: 50%;
+    margin: 0 auto;
+    background-color: $main-off-white;
+    margin-top: 175px;
+    border: 1px solid $accent;
+    border-radius: 10px;
+  }
+}
+
+.button-section {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 25%;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  gap: 10px;
+}
+
+.accordion-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 25%;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.navbar {
+  border-bottom: 2px solid $main-brown;
+}
+
+.navbar a:hover {
+  background: $main-brown;
+}
+
+.accordion-item,
+.accordion-button {
+  background-color: $main-off-white !important;
+}
+
+.accordion-button {
+  border-bottom: 1px solid $accent !important;
+}
+
+footer {
+  font-weight: 300;
+  display: flex;
+  justify-content: space-evenly;
+  background: $main-brown;
+  padding: 0.5em;
+  padding-top: 20px;
+  border-top: 1px solid $accent;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
